@@ -12,6 +12,7 @@
   "scripts": {
     "test": "jest",
     "babel-node": "babel-node",
+    "eslint": "eslint ",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
@@ -28,6 +29,10 @@
     "babel-preset-stage-0": "^6.24.1"
   },
   "dependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "readline-sync": "^1.4.9"
   }
 }
