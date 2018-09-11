@@ -1,6 +1,6 @@
 {
   "name": "brain_games_ivcoderx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Проект Brain Games / Фронтенд JS-программист",
   "main": "index.js",
   "bin": {
@@ -26,5 +26,8 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }
