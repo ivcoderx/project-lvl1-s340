@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 export default () => {
-  const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const getRandomInRange = max => Math.floor(Math.random() * max) + 1;
   console.log('Welcome to Brain Games! \n Answer "yes" if number even otherwise answer "no".');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
