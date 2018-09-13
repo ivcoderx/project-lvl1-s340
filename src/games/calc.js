@@ -1,26 +1,34 @@
 import readlineSync from 'readline-sync';
+import { getRandomOperator, getRandomNumber } from '../units/maths';
+import { welcome, userName } from '../units/dialog';
 
 export default () => {
-  const getRandomInRange = max => Math.floor(Math.random() * max) + 1;
-  console.log('Welcome to Brain Games! \n What is the result of the expression?');
-  const userName = readlineSync.question('May I have your name? ');
+  console.log(`${welcome} What is the result of the expression?`);
   console.log(`Hello, ${userName}!`);
   const validate = (number, question) => {
-    if ((number % 2 === 0 && question === 'yes') || (number % 2 !== 0 && question === 'no')) {
+    const isCorrect = Number(number) === Number(question);
+    if (isCorrect) {
       console.log('Correct!');
-    } if (number % 2 === 0 && question !== 'yes') {
-      console.log(`'${question}' is wrong answer ;(. Correct answer was 'yes'.`);
-      return false;
-    } if (number % 2 !== 0 && question !== 'no') {
-      console.log(`'${question}' is wrong answer ;(. Correct answer was 'no'.`);
+    } else if (!isCorrect) {
+      console.log(`'${question}' is wrong answer ;(. Correct answer was '${number}'.`);
       return false;
     }
     return true;
   };
   let result = 0;
   for (let i = 1; i <= 3; i += 1) {
-    const number = getRandomInRange(100);
-    console.log(`'Question:' ${number}`);
+    const numberOne = getRandomNumber(100);
+    const numberTwo = getRandomNumber(100);
+    let expression = '';
+    let number = 0;
+    if (getRandomOperator()) {
+      expression = `${numberOne} + ${numberTwo}`;
+      number = numberOne + numberTwo;
+    } else {
+      expression = `${numberOne} - ${numberTwo}`;
+      number = numberOne - numberTwo;
+    }
+    console.log(`'Question:' ${expression}`);
     const question = readlineSync.question('Your answer: ');
     if (!validate(number, question)) {
       break;

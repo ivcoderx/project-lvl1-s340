@@ -1,25 +1,30 @@
 import readlineSync from 'readline-sync';
+import { getRandomNumber } from '../units/maths';
+import { welcome, userName } from '../units/dialog';
 
 export default () => {
-  const getRandomInRange = max => Math.floor(Math.random() * max) + 1;
-  console.log('Welcome to Brain Games! \n Answer "yes" if number even otherwise answer "no".');
-  const userName = readlineSync.question('May I have your name? ');
+  console.log(`${welcome} Answer "yes" if number even otherwise answer "no".`);
   console.log(`Hello, ${userName}!`);
   const validate = (number, question) => {
-    if ((number % 2 === 0 && question === 'yes') || (number % 2 !== 0 && question === 'no')) {
+    const isEven = number % 2 === 0;
+    const isYes = question === 'yes';
+    const isNo = question === 'no';
+    const isCorrect = (isEven && isYes) || (!isEven && isNo);
+    const isWrong = `'${question}' is wrong answer ;(. Correct answer was`;
+    if (isCorrect) {
       console.log('Correct!');
-    } if (number % 2 === 0 && question !== 'yes') {
-      console.log(`'${question}' is wrong answer ;(. Correct answer was 'yes'.`);
+    } else if (isEven && !isYes) {
+      console.log(`${isWrong} 'yes'.`);
       return false;
-    } if (number % 2 !== 0 && question !== 'no') {
-      console.log(`'${question}' is wrong answer ;(. Correct answer was 'no'.`);
+    } else if (!isEven && !isNo) {
+      console.log(`${isWrong} 'no'.`);
       return false;
     }
     return true;
   };
   let result = 0;
   for (let i = 1; i <= 3; i += 1) {
-    const number = getRandomInRange(100);
+    const number = getRandomNumber(100);
     console.log(`'Question:' ${number}`);
     const question = readlineSync.question('Your answer: ');
     if (!validate(number, question)) {

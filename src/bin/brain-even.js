@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import event from '../games/even';
+import gameEvent from '../games/even';
 
-event();
+gameEvent();
