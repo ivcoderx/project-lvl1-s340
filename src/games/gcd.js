@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
-import { getRandomOperator, getRandomNumber } from '../units/maths';
+import { getRandomNumber, getGCD } from '../units/maths';
 import { welcome, isWrong, isResult } from '../units/dialog';
 
 export default () => {
-  welcome('What is the result of the expression?');
+  welcome('Find the greatest common divisor of given numbers.');
   const validate = (number, question) => {
     const isCorrect = Number(number) === Number(question);
     if (isCorrect) {
@@ -18,16 +18,9 @@ export default () => {
   for (let i = 1; i <= 3; i += 1) {
     const numberOne = getRandomNumber(100);
     const numberTwo = getRandomNumber(100);
-    let expression = '';
     let number = 0;
-    if (getRandomOperator()) {
-      expression = `${numberOne} + ${numberTwo}`;
-      number = numberOne + numberTwo;
-    } else {
-      expression = `${numberOne} - ${numberTwo}`;
-      number = numberOne - numberTwo;
-    }
-    console.log(`'Question:' ${expression}`);
+    number = getGCD(numberOne, numberTwo);
+    console.log(`'Question:' ${numberOne} ${numberTwo}`);
     const question = readlineSync.question('Your answer: ');
     if (!validate(number, question)) {
       break;

@@ -1,23 +1,21 @@
 import readlineSync from 'readline-sync';
 import { getRandomNumber } from '../units/maths';
-import { welcome, userName } from '../units/dialog';
+import { welcome, isWrong, isResult } from '../units/dialog';
 
 export default () => {
-  console.log(`${welcome} Answer "yes" if number even otherwise answer "no".`);
-  console.log(`Hello, ${userName}!`);
+  welcome('Answer "yes" if number even otherwise answer "no".');
   const validate = (number, question) => {
     const isEven = number % 2 === 0;
     const isYes = question === 'yes';
     const isNo = question === 'no';
     const isCorrect = (isEven && isYes) || (!isEven && isNo);
-    const isWrong = `'${question}' is wrong answer ;(. Correct answer was`;
     if (isCorrect) {
       console.log('Correct!');
     } else if (isEven && !isYes) {
-      console.log(`${isWrong} 'yes'.`);
+      isWrong(question, 'yes');
       return false;
     } else if (!isEven && !isNo) {
-      console.log(`${isWrong} 'no'.`);
+      isWrong(question, 'no');
       return false;
     }
     return true;
@@ -31,7 +29,5 @@ export default () => {
       break;
     } else result += 1;
   }
-  if (result < 3) {
-    console.log(`Let's try again, ${userName}!`);
-  } else console.log(`Congratulations, ${userName}!`);
+  isResult(result);
 };

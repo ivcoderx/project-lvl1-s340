@@ -1,12 +1,13 @@
 {
   "name": "brain_games_ivcoderx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Проект Brain Games / Фронтенд JS-программист",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js"
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-gds": "dist/bin/brain-gcd.js"
   },
   "files": [
     "dist"
