@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import { getRandomOperator, getRandomNumber, getGCD } from './maths';
+import balance from './logics';
 
 let userName = '';
 const welcome = (descript) => {
@@ -46,20 +47,24 @@ const questions = (name) => {
     switch (name) {
       case 'calc':
         if (getRandomOperator()) {
-          expression = `${numberOne} + ${numberTwo}`;
           number = numberOne + numberTwo;
+          expression = `${numberOne} + ${numberTwo}`;
         } else {
-          expression = `${numberOne} - ${numberTwo}`;
           number = numberOne - numberTwo;
+          expression = `${numberOne} - ${numberTwo}`;
         }
         break;
       case 'even':
-        expression = `${numberOne}`;
         number = numberOne;
+        expression = `${numberOne}`;
         break;
       case 'gcd':
         number = getGCD(numberOne, numberTwo);
         expression = `${numberOne} ${numberTwo}`;
+        break;
+      case 'balance':
+        number = balance(numberOne * 10);
+        expression = `${numberOne * 10}`;
         break;
       default:
         number = 0;

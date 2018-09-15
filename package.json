@@ -1,6 +1,6 @@
 {
   "name": "brain_games_ivcoderx",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Проект Brain Games / Фронтенд JS-программист",
   "main": "index.js",
   "bin": {
