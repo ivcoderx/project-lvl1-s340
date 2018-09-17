@@ -1,20 +1,24 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomNumber, getRandomBoolean } from '../maths';
+import { getRandomNumber } from '../maths';
 import game from '..';
 
 const description = 'What is the result of the expression?';
 
-const asking = () => {
+const askQuestion = () => {
   const numberOne = getRandomNumber(100);
   const numberTwo = getRandomNumber(100);
+  const numberThree = getRandomNumber(3);
   let number = 0;
   let expression = '';
-  if (getRandomBoolean()) {
+  if (numberThree === 1) {
     number = numberOne + numberTwo;
     expression = `${numberOne} + ${numberTwo}`;
-  } else {
+  } else if (numberThree === 2) {
     number = numberOne - numberTwo;
     expression = `${numberOne} - ${numberTwo}`;
+  } else {
+    number = numberOne * numberTwo;
+    expression = `${numberOne} * ${numberTwo}`;
   }
   const question = expression;
   const answer = `${number}`;
@@ -22,6 +26,6 @@ const asking = () => {
   return cons(question, answer);
 };
 
-const gameCalc = () => game(description, asking);
+const gameCalc = () => game(description, askQuestion);
 
 export default gameCalc;

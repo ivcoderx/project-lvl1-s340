@@ -1,5 +1,4 @@
 const getRandomNumber = max => Math.floor(Math.random() * max) + 1;
-const getRandomBoolean = () => (Math.floor(Math.random() * 2) === 0);
 const sumDigit = (number) => {
   const n = String(number).length;
   if (n !== 1) {
@@ -8,4 +7,4 @@ const sumDigit = (number) => {
 };
 
 
-export { getRandomNumber, getRandomBoolean, sumDigit };
+export { getRandomNumber, sumDigit };

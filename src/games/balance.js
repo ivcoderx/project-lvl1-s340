@@ -16,7 +16,7 @@ const balance = (number) => {
   return result;
 };
 
-const asking = () => {
+const askQuestion = () => {
   const number = getRandomNumber(100) * getRandomNumber(100);
   const question = `${number}`;
   const answer = balance(number);
@@ -24,6 +24,6 @@ const asking = () => {
   return cons(question, answer);
 };
 
-const gameBalance = () => game(description, asking);
+const gameBalance = () => game(description, askQuestion);
 
 export default gameBalance;
