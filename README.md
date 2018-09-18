@@ -1,7 +1,7 @@
 # project-lvl1-s340
 <table>
   <tr>
-      <td>
+      <td colspan="2">
           <h1>Brain-games from ivcoderx</h1>
           <a href="https://codeclimate.com/github/ivcoderx/project-lvl1-s340/maintainability"><img src="https://api.codeclimate.com/v1/badges/7be436e7def2ba8f312d/maintainability" /></a>
           <a href="https://codeclimate.com/github/ivcoderx/project-lvl1-s340/test_coverage"><img src="https://api.codeclimate.com/v1/badges/7be436e7def2ba8f312d/test_coverage" /></a>
@@ -22,18 +22,12 @@
             <h4>Play in brain-calc</h4>
             <a href="https://asciinema.org/a/SBT22jGUuJmn1JR3KF5oQq8m4" target="_blank"><img src="https://asciinema.org/a/SBT22jGUuJmn1JR3KF5oQq8m4.png" /></a>
         </td>
-    </tr>
-    <tr>
         <td>
             <h4>Play in brain-even</h4>
             <a href="https://asciinema.org/a/Ux0lwqReQ5Idj7Cq8J9dZ9q1J" target="_blank"><img src="https://asciinema.org/a/Ux0lwqReQ5Idj7Cq8J9dZ9q1J.png" /></a>
         </td>
-        <td>
-            <h4>Play in brain-gcd</h4>
-            <a href="https://asciinema.org/a/Xoe1V9aOQmvmpGjsa07gw1JYI" target="_blank"><img src="https://asciinema.org/a/Xoe1V9aOQmvmpGjsa07gw1JYI.png" /></a>
-        </td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>
             <h4>Play in brain-progression</h4>
             <a href="https://asciinema.org/a/b8hcqZJ5rfP40LojKHUd1uIGk" target="_blank"><img src="https://asciinema.org/a/b8hcqZJ5rfP40LojKHUd1uIGk.png" /></a>
@@ -41,6 +35,10 @@
         <td>
             <h4>Play in brain-prime</h4>
             <a href="https://asciinema.org/a/obx1rbMl5zB4CAZLY8QiEuyex" target="_blank"><img src="https://asciinema.org/a/obx1rbMl5zB4CAZLY8QiEuyex.png" /></a>
+        </td>
+        <td>
+            <h4>Play in brain-gcd</h4>
+            <a href="https://asciinema.org/a/Xoe1V9aOQmvmpGjsa07gw1JYI" target="_blank"><img src="https://asciinema.org/a/Xoe1V9aOQmvmpGjsa07gw1JYI.png" /></a>
         </td>
     </tr>
 </table>
